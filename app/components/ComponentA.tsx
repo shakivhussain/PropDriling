@@ -1,11 +1,12 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import ComponentB from './ComponentB'
 
 const ComponentA = ({ username }: { username: string }) => {
     
     return (
         <View>
-            <Text>Component A</Text>
+           <ComponentB username={username}/>
         </View>
     )
 }
