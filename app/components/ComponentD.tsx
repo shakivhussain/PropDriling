@@ -1,12 +1,22 @@
 import { View, Text } from 'react-native'
-import React from 'react'
+import React, { useContext } from 'react'
+import { UserContext } from '../context/UserContext'
 
-const ComponentD = ({username}:{username:string}) => {
-  return (
-    <View>
-      <Text>UserName From A == {username}</Text>
-    </View>
-  )
+const ComponentD = () => {
+
+    const context = useContext(UserContext)
+
+    if (!context) {
+        throw new Error('Component must use User Provider!')
+    }
+
+    const { user, setUser } = context
+
+    return (
+        <View>
+            <Text>UserName From A == {user}</Text>
+        </View>
+    )
 }
 
 export default ComponentD

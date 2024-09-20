@@ -1,14 +1,21 @@
 import { StyleSheet, Text, View } from "react-native";
 import ComponentA from "./components/ComponentA";
+import { UserContext, UserProvider } from "./context/UserContext";
 
 export default function Page() {
 
-  const username ="Shakiv"
+  const username = "Shakiv"
   return (
     <View style={styles.container}>
       <View style={styles.main}>
 
-        <ComponentA username={username}  />
+
+        <UserProvider>
+
+
+          <ComponentA />
+        </UserProvider>
+
 
       </View>
     </View>
