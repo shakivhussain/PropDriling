@@ -1,6 +1,8 @@
-import { StyleSheet, Text, View } from "react-native";
-import ComponentA from "./components/ComponentA";
-import { UserContext, UserProvider } from "./context/UserContext";
+import { SafeAreaView, StyleSheet, Text, View } from "react-native";
+import { NumberProvider } from "./context/RandomNumberContext";
+import RandomeNumber from "./components/RandomeNumber";
+import AddRandomNumber from "./components/AddRandomNumber";
+
 
 export default function Page() {
 
@@ -9,12 +11,16 @@ export default function Page() {
     <View style={styles.container}>
       <View style={styles.main}>
 
+        <NumberProvider>
 
-        <UserProvider>
+          <SafeAreaView>
+            <AddRandomNumber />
 
+            <RandomeNumber />
 
-          <ComponentA />
-        </UserProvider>
+          </SafeAreaView>
+        </NumberProvider>
+
 
 
       </View>
