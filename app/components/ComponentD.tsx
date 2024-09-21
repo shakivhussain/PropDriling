@@ -12,9 +12,12 @@ const ComponentD = () => {
 
     const { user, setUser } = context
 
+
+
     return (
         <View>
             <Text>UserName From A == {user}</Text>
+
         </View>
     )
 }
